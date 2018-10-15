@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as actions from '../actions';
 
 class ChatBox extends Component {
 
@@ -23,8 +24,9 @@ class ChatBox extends Component {
         console.log("this.state.msg:",this.state.msg);
         this.setState({
             msg: "",
-            chatMsg :  this.state.chatMsg + this.state.msg + "\n"
+            chatMsg :  this.state.chatMsg + ("Me:" +this.state.msg) + "\n"
         });
+        this.props.fetchChat(this.state.msg);
         event.target.value = "";
     }
 
@@ -44,7 +46,8 @@ class ChatBox extends Component {
                         <input 
                             name="msg"
                             value = {this.state.msg}
-                            onChange={this.updateMsg}/><button onClick={this.sendMsg}>Send</button>
+                            onChange={this.updateMsg}/>
+                        <button onClick={this.sendMsg}>Send</button>
                     </div>
                 </div>                
             </div>
