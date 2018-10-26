@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as actions from '../actions';
+import { connect } from 'react-redux';
 
 class ChatBox extends Component {
 
@@ -55,4 +56,8 @@ class ChatBox extends Component {
     }
 }
 
-export default ChatBox;
+function mapStateToProps({chat}) {
+    return { chat };
+}
+
+export default connect(null, actions)(ChatBox);
