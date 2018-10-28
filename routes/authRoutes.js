@@ -25,6 +25,7 @@ module.exports = (app) => {
     });
     
     app.get('/api/fetch_chat', (req, res) => {
+        console.log("authRoute:", req.query);
         res.send("chat response");
     });
 }

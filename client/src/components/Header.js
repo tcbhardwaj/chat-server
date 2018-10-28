@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class Header extends Component {
 
     renderContent() {
-        console.log("this.props.auth:",this.props.auth);
+        console.log("this.props:",this.props);
         switch(this.props.auth) {
             case null:
                 return;

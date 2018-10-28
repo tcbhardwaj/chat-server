@@ -6,9 +6,11 @@ export const fetchUser = () => async dispatch => {
     dispatch({type: FETCH_USER, payload: res.data});
 };
 
-export const fetchChat = msg => async dispatch => {
-    console.log("fetchChat::msg:", msg);
-    const res = await axios.get('/api/fetch_chat');
-    console.log("fetchChat::res:", res);
+export const fetchChat = msg => async dispatch => {    
+    const res = await axios.get('/api/fetch_chat', {
+        param: {
+            'msg': msg
+        }
+    });    
     dispatch({type: FETCH_CHAT, payload: res.data});
 };
