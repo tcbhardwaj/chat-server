@@ -29,19 +29,19 @@ class ChatBox extends Component {
         await this.props.fetchChat(this.state.msg);        
         this.setState({
             chatMsg :  this.state.chatMsg + (this.props.chat) + "\n"
-        })
-        //event.target.value = "";           
+        })                   
     }
 
     render() {
         return (
-            <div>
-                <div className="row">
-                    <div className="col s4 offset-s4">
+            <div className="container">
+                <div className="row">                    
+                    <div className="col s10 offset-s1">
+                        <h4> Chat-Box </h4>
                         <textarea 
                             value = {this.state.chatMsg}
                             name="msgArea"
-                            rows="50"  readOnly={true} 
+                            rows={100}  readOnly={true} 
                             style={{overFlow: "auto", resize: "none", height: "150px"}}
                         >
 
