@@ -11,7 +11,7 @@ module.exports = (app) => {
     app.get('/auth/google/callback', 
         passport.authenticate('google'), 
         (req, res) => {
-            res.redirect('/surveys');
+            res.redirect('/chatbox');
         }
     );
 
@@ -25,7 +25,7 @@ module.exports = (app) => {
     });
     
     app.get('/api/fetch_chat', (req, res) => {
-        console.log("authRoute:", req.query);
+        console.log("authRoute:", req.query);        
         res.send("chat response");
     });
 }

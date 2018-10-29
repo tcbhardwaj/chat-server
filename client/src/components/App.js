@@ -21,9 +21,8 @@ class App extends Component {
           <div>
             <Header />
             <Route exact path="/" component={Landing} />            
-            <Route exact path="/surveys" component={ this.props.auth == false ? Landing : ChatBox } />
-            <Route path="/survey/new" component={ this.props.auth == false ? Landing : SurveyNew} /> 
-            <ChatBox />           
+            <Route exact path="/chatbox" component={ this.props.auth == false ? Landing : ChatBox } />
+            <Route path="/survey/new" component={ this.props.auth == false ? Landing : SurveyNew} />             
           </div>
         </BrowserRouter>
       </div>

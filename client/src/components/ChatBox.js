@@ -21,13 +21,16 @@ class ChatBox extends Component {
         });
     }
 
-    sendMsg(event) {        
+    async sendMsg(event) {        
         this.setState({
             msg: "",
             chatMsg :  this.state.chatMsg + ("Me:" +this.state.msg) + "\n"
         });
-        this.props.fetchChat(this.state.msg);
-        event.target.value = "";           
+        await this.props.fetchChat(this.state.msg);        
+        this.setState({
+            chatMsg :  this.state.chatMsg + (this.props.chat) + "\n"
+        })
+        //event.target.value = "";           
     }
 
     render() {
@@ -47,8 +50,7 @@ class ChatBox extends Component {
                             name="msg"
                             value = {this.state.msg}
                             onChange={this.updateMsg}/>
-                        <button onClick={this.sendMsg}>Send</button>
-                        <label>{ this.props.chat }</label>
+                        <button onClick={this.sendMsg}>Send</button>                                               
                     </div>
                 </div>                
             </div>
