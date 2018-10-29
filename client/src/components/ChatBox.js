@@ -29,8 +29,7 @@ class ChatBox extends Component {
         await this.props.fetchChat(this.state.msg);        
         this.setState({
             chatMsg :  this.state.chatMsg + (this.props.chat) + "\n"
-        })
-        //event.target.value = "";           
+        })                   
     }
 
     render() {
